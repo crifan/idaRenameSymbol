@@ -1,0 +1,17 @@
+{
+  "isExportResult": true,
+  "symbolList": [
+    {
+      "oldName": "sub_30278",
+      "newName": "atomicStateCheck_30278",
+      "type": "function",
+      "comment": "功能: 原子状态检查并处理\n描述: 检查原子状态标志并执行相应处理\n用于多线程同步控制"
+    },
+    {
+      "oldName": "unk_1C1408",
+      "newName": "g_atomicStateFlag_1C1408",
+      "type": "data",
+      "comment": "原子状态标志，4字节，用于多线程同步"
+    }
+  ]
+}
