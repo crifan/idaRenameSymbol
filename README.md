@@ -1,6 +1,12 @@
 # idaRenameSymbol
 
-IDA Plugin: 根据配置文件 `config.json` 批量重命名IDA中的符号（函数、数据），并添加注释。
+最后更新：`20260223`
+
+IDA插件：根据配置文件 `config.json` 批量重命名IDA中的符号（函数、数据），并添加注释。
+
+## 效果
+
+![31B98_before_after](./doc/img/31B98_before_after.jpg)
 
 ## 功能
 

@@ -1,2 +1,4 @@
+.DS_Store
+
 # User's private config (use config.example.json as template)
 config.json
