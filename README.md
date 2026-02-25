@@ -8,6 +8,12 @@ IDA插件：根据配置文件 `config.json` 批量重命名IDA中的符号（�
 
 ![31B98_before_after](./doc/img/31B98_before_after.jpg)
 
+## Repo仓库地址
+
+https://github.com/crifan/idaRenameSymbol
+
+https://github.com/crifan/idaRenameSymbol.git
+
 ## 功能
 
 - **函数重命名**：如 `sub_2CC50` -> `vmObjRefCleanup_2CC50`，并添加函数注释（IDA伪代码视图顶部显示）
