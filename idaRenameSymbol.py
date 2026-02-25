@@ -1,6 +1,6 @@
 # Function: IDA Plugin, rename symbols (functions, data) from config.json
 # Author: Crifan Li
-# Update: 20260222
+# Update: 20260225
 # Usage:
 #   IDA Pro -> File -> Script file ... -> Run this script: `idaRenameSymbol.py`
 #   Config file `config.json` should be in the same folder as this script
@@ -42,14 +42,15 @@ logLevel = logging.INFO
 # config json file path
 # default: use config.json in same folder as this script
 # change to your value if needed
-pluginVersion = "20260222"
+pluginVersion = "20260225"
 configJsonFilename = "config.json"
 
 # export result to json file (default, can be overridden by config.json)
 isExportResult = True
 
 # change to your value
-outputFileFolderName = "renamedSymbol"
+outputFolderName = "renameSymbol/output"
+outputFileName = "renameSymbol"
 
 outputFolder = None
 
@@ -543,18 +544,18 @@ def main():
     if not outputFolder:
       currentIdaFolder = IDAUtil.ida_getCurrentFolder()
       CommonUtil.logInfo("currentIdaFolder=%s", currentIdaFolder)
-      outputFolder = os.path.join(currentIdaFolder, outputFileFolderName)
+      outputFolder = os.path.join(currentIdaFolder, outputFolderName)
       CommonUtil.logInfo("outputFolder=%s", outputFolder)
       CommonUtil.createFolder(outputFolder)
 
-    outputFilename = "%s_%s_%s.json" % (curBinFilename, outputFileFolderName, curDateTimeStr)
-    CommonUtil.logDebug("outputFilename=%s", outputFilename)
-    outputFullPath = os.path.join(outputFolder, outputFilename)
+    curOutputFilename = "%s_%s_%s.json" % (curBinFilename, outputFileName, curDateTimeStr)
+    CommonUtil.logDebug("curOutputFilename=%s", curOutputFilename)
+    outputFullPath = os.path.join(outputFolder, curOutputFilename)
     CommonUtil.logDebug("outputFullPath=%s", outputFullPath)
 
     CommonUtil.logInfo("Exporting result to file ...")
     CommonUtil.logInfo("  folder: %s", outputFolder)
-    CommonUtil.logInfo("  file: %s", outputFilename)
+    CommonUtil.logInfo("  file: %s", curOutputFilename)
     CommonUtil.saveJsonToFile(outputFullPath, resultDict)
     CommonUtil.logInfo("Exported: %s", outputFullPath)
 
